@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import AboutUs from '../components/AboutUs';
 import Footer from '../components/Footer';
 import PropertyCard from '../components/PropertyCard';
+import { Button } from "@/components/ui/button"; // Add this import
 
 const Index = () => {
   const properties = [
