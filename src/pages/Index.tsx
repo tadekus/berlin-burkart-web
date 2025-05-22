@@ -5,7 +5,7 @@ import Hero from '../components/Hero';
 import AboutUs from '../components/AboutUs';
 import Footer from '../components/Footer';
 import PropertyCard from '../components/PropertyCard';
-import { Button } from "@/components/ui/button"; // Add this import
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const properties = [
@@ -28,15 +28,6 @@ const Index = () => {
       imageUrl: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Exklusives Einfamilienhaus mit Garten",
-      location: "Zehlendorf, Berlin",
-      price: "1.850.000 €",
-      size: "220 m²",
-      bedrooms: 5,
-      type: "Einfamilienhaus",
-      imageUrl: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    },
-    {
       title: "Lichtdurchflutete Maisonette-Wohnung",
       location: "Mitte, Berlin",
       price: "980.000 €",
@@ -46,22 +37,31 @@ const Index = () => {
       imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Modernes Stadthaus im Bauhausstil",
-      location: "Dahlem, Berlin",
-      price: "1.450.000 €",
-      size: "180 m²",
-      bedrooms: 4,
-      type: "Stadthaus",
-      imageUrl: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      title: "Modernes Apartment im Stadtzentrum",
+      location: "Kreuzberg, Berlin",
+      price: "450.000 €",
+      size: "85 m²",
+      bedrooms: 2,
+      type: "Apartment",
+      imageUrl: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Exklusive Villa mit Seeblick",
-      location: "Wannsee, Berlin",
-      price: "3.200.000 €",
-      size: "320 m²",
-      bedrooms: 6,
-      type: "Villa",
-      imageUrl: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      title: "Geräumige Wohnung mit Stadtblick",
+      location: "Friedrichshain, Berlin",
+      price: "720.000 €",
+      size: "120 m²",
+      bedrooms: 3,
+      type: "Etagenwohnung",
+      imageUrl: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Elegante Stadtwohnung in historischem Gebäude",
+      location: "Schöneberg, Berlin",
+      price: "890.000 €",
+      size: "135 m²",
+      bedrooms: 3,
+      type: "Stadtwohnung",
+      imageUrl: "https://images.unsplash.com/photo-1559599238-308793637427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
   ];
 
@@ -69,10 +69,7 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        <Hero />
-        <AboutUs />
-
-        {/* Properties Section */}
+        {/* Properties Section - Moved to top */}
         <section id="properties" className="py-20 bg-white">
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mx-auto text-center mb-16">
@@ -102,6 +99,9 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        <Hero />
+        <AboutUs />
 
         {/* Services Section */}
         <section id="services" className="py-20">
