@@ -4,14 +4,103 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import AboutUs from '../components/AboutUs';
 import Footer from '../components/Footer';
+import PropertyCard from '../components/PropertyCard';
 
 const Index = () => {
+  const properties = [
+    {
+      title: "Moderne Penthouse-Wohnung mit Dachterrasse",
+      location: "Charlottenburg, Berlin",
+      price: "1.250.000 €",
+      size: "160 m²",
+      bedrooms: 4,
+      type: "Penthouse",
+      imageUrl: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Sanierte Altbauwohnung mit Balkon",
+      location: "Prenzlauer Berg, Berlin",
+      price: "650.000 €",
+      size: "95 m²",
+      bedrooms: 3,
+      type: "Altbauwohnung",
+      imageUrl: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Exklusives Einfamilienhaus mit Garten",
+      location: "Zehlendorf, Berlin",
+      price: "1.850.000 €",
+      size: "220 m²",
+      bedrooms: 5,
+      type: "Einfamilienhaus",
+      imageUrl: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Lichtdurchflutete Maisonette-Wohnung",
+      location: "Mitte, Berlin",
+      price: "980.000 €",
+      size: "145 m²",
+      bedrooms: 4,
+      type: "Maisonette",
+      imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Modernes Stadthaus im Bauhausstil",
+      location: "Dahlem, Berlin",
+      price: "1.450.000 €",
+      size: "180 m²",
+      bedrooms: 4,
+      type: "Stadthaus",
+      imageUrl: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Exklusive Villa mit Seeblick",
+      location: "Wannsee, Berlin",
+      price: "3.200.000 €",
+      size: "320 m²",
+      bedrooms: 6,
+      type: "Villa",
+      imageUrl: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
         <Hero />
         <AboutUs />
+
+        {/* Properties Section */}
+        <section id="properties" className="py-20 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h6 className="text-primary font-medium mb-2">UNSERE IMMOBILIEN</h6>
+              <h2 className="text-4xl font-bold mb-6">Aktuelle Angebote</h2>
+              <p className="text-lg text-gray-600">
+                Entdecken Sie unser exklusives Portfolio an hochwertigen Immobilien in den besten Lagen Berlins und Umgebung.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {properties.map((property, index) => (
+                <div 
+                  key={index}
+                  className="animate-fade-in" 
+                  style={{ animationDelay: `${index * 0.1}s`, opacity: 0 }}
+                >
+                  <PropertyCard {...property} />
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <Button variant="outline" size="lg">
+                Alle Immobilien anzeigen
+              </Button>
+            </div>
+          </div>
+        </section>
 
         {/* Services Section */}
         <section id="services" className="py-20">
