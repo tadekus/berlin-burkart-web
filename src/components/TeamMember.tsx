@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, Linkedin } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 
 interface TeamMemberProps {
   name: string;
@@ -8,7 +8,7 @@ interface TeamMemberProps {
   description: string;
   email: string;
   phone: string;
-  linkedIn?: string;
+  linkedIn?: string; // We'll keep this in the interface for backward compatibility
   imageUrl: string;
 }
 
@@ -17,8 +17,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   position, 
   description, 
   email, 
-  phone, 
-  linkedIn, 
+  phone,
   imageUrl 
 }) => {
   return (
@@ -43,12 +42,6 @@ const TeamMember: React.FC<TeamMemberProps> = ({
             <Phone size={18} className="text-primary" />
             <a href={`tel:${phone}`} className="text-gray-700 hover:text-primary">{phone}</a>
           </div>
-          {linkedIn && (
-            <div className="flex items-center gap-2">
-              <Linkedin size={18} className="text-primary" />
-              <a href={linkedIn} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-primary">LinkedIn Profil</a>
-            </div>
-          )}
         </div>
       </div>
     </div>

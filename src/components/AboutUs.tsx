@@ -10,7 +10,6 @@ const AboutUs = () => {
       description: "Dr. Maximilian Burkert ist Gründer und geschäftsführender Partner bei BURKERT&BURKART. Mit über 20 Jahren Erfahrung im Finanzsektor berät er Unternehmen bei strategischen Entscheidungen und Mergers & Acquisitions. Er hat an der Humboldt-Universität zu Berlin promoviert und hält Vorlesungen an der Frankfurt School of Finance.",
       email: "m.burkert@burkertburkart.de",
       phone: "+49 30 123456-01",
-      linkedIn: "https://linkedin.com",
       imageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
@@ -19,7 +18,6 @@ const AboutUs = () => {
       description: "Julia Burkart leitet den Bereich Unternehmensberatung bei BURKERT&BURKART und bringt über 15 Jahre Erfahrung in der digitalen Transformation mit. Vor ihrer Tätigkeit bei BURKERT&BURKART war sie bei McKinsey und Boston Consulting Group tätig. Sie hat einen MBA von der ESMT Berlin und spricht fließend Deutsch, Englisch und Französisch.",
       email: "j.burkart@burkertburkart.de",
       phone: "+49 30 123456-02",
-      linkedIn: "https://linkedin.com",
       imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
@@ -28,7 +26,6 @@ const AboutUs = () => {
       description: "Paul Mey ist verantwortlich für den Bereich Technologie und Innovation bei BURKERT&BURKART. Mit seiner Expertise in IT-Infrastruktur und Künstlicher Intelligenz unterstützt er Kunden bei der digitalen Transformation. Zuvor war er CTO bei einem führenden Berliner Technologieunternehmen. Er hat einen Master in Informatik von der TU Berlin.",
       email: "p.mey@burkertburkart.de",
       phone: "+49 30 123456-03",
-      linkedIn: "https://linkedin.com",
       imageUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
@@ -37,7 +34,6 @@ const AboutUs = () => {
       description: "Dr. Sophia Burkart leitet den wachsenden Bereich Nachhaltigkeit und ESG bei BURKERT&BURKART. Sie berät Unternehmen bei der Entwicklung und Umsetzung von Nachhaltigkeitsstrategien und ESG-Compliance. Sie hat in Umweltwissenschaften an der Freien Universität Berlin promoviert und war zuvor bei der Deutschen Gesellschaft für Internationale Zusammenarbeit (GIZ) tätig.",
       email: "s.burkart@burkertburkart.de",
       phone: "+49 30 123456-04",
-      linkedIn: "https://linkedin.com",
       imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     }
   ];
