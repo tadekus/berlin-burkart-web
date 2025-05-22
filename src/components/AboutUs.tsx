@@ -23,13 +23,13 @@ const AboutUs = () => {
       imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
-      name: "Paul Burkert",
+      name: "Paul Mey",
       position: "Partner, Technologie",
-      description: "Paul Burkert ist verantwortlich für den Bereich Technologie und Innovation bei BURKERT&BURKART. Mit seiner Expertise in IT-Infrastruktur und Künstlicher Intelligenz unterstützt er Kunden bei der digitalen Transformation. Zuvor war er CTO bei einem führenden Berliner Technologieunternehmen. Er hat einen Master in Informatik von der TU Berlin.",
-      email: "p.burkert@burkertburkart.de",
+      description: "Paul Mey ist verantwortlich für den Bereich Technologie und Innovation bei BURKERT&BURKART. Mit seiner Expertise in IT-Infrastruktur und Künstlicher Intelligenz unterstützt er Kunden bei der digitalen Transformation. Zuvor war er CTO bei einem führenden Berliner Technologieunternehmen. Er hat einen Master in Informatik von der TU Berlin.",
+      email: "p.mey@burkertburkart.de",
       phone: "+49 30 123456-03",
       linkedIn: "https://linkedin.com",
-      imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      imageUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
       name: "Dr. Sophia Burkart",
