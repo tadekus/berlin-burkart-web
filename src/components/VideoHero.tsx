@@ -4,6 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Play } from 'lucide-react';
 
 const VideoHero = () => {
+  const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+    console.error('Video failed to load:', e);
+  };
+
+  const handleVideoLoaded = () => {
+    console.log('Video loaded successfully');
+  };
+
   return (
     <div className="relative h-screen overflow-hidden">
       {/* Video Background */}
@@ -14,7 +22,13 @@ const VideoHero = () => {
           loop
           playsInline
           className="w-full h-full object-cover"
+          onError={handleVideoError}
+          onLoadedData={handleVideoLoaded}
         >
+          <source
+            src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4"
+            type="video/mp4"
+          />
           <source
             src="https://videos.pexels.com/video-files/5524077/5524077-uhd_2560_1440_25fps.mp4"
             type="video/mp4"
