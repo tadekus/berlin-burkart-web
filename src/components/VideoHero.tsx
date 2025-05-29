@@ -16,7 +16,7 @@ const VideoHero = () => {
           className="w-full h-full object-cover"
         >
           <source
-            src="https://player.vimeo.com/external/342571490.hd.mp4?s=16bb9ea35ca8d89864e7d26dd39a3024a20c4433&profile_id=175"
+            src="https://videos.pexels.com/video-files/5524077/5524077-uhd_2560_1440_25fps.mp4"
             type="video/mp4"
           />
           {/* Fallback image if video doesn't load */}
@@ -48,9 +48,9 @@ const VideoHero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-white text-white hover:bg-white hover:text-primary px-8 py-3 text-lg flex items-center gap-2"
+              className="border-2 border-white text-white hover:bg-white hover:text-primary bg-transparent px-8 py-3 text-lg flex items-center gap-2 transition-all duration-300"
             >
-              <Play size={20} />
+              <Play size={20} fill="currentColor" />
               Video abspielen
             </Button>
           </div>
