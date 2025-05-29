@@ -1,15 +1,59 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Play } from 'lucide-react';
 
 const VideoHero = () => {
+  const videos = [
+    {
+      src: "https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4",
+      title: "Modern Luxury Living"
+    },
+    {
+      src: "https://videos.pexels.com/video-files/5524077/5524077-uhd_2560_1440_25fps.mp4", 
+      title: "Contemporary Design"
+    },
+    {
+      src: "https://videos.pexels.com/video-files/6069112/6069112-uhd_2560_1440_30fps.mp4",
+      title: "Elegant Interiors"
+    },
+    {
+      src: "https://videos.pexels.com/video-files/8134179/8134179-uhd_2560_1440_25fps.mp4",
+      title: "Premium Architecture"
+    },
+    {
+      src: "https://videos.pexels.com/video-files/7534553/7534553-uhd_2560_1440_25fps.mp4",
+      title: "Luxury Amenities"
+    }
+  ];
+
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentVideoIndex((prevIndex) => 
+          prevIndex === videos.length - 1 ? 0 : prevIndex + 1
+        );
+        setIsTransitioning(false);
+      }, 500);
+    }, 8000); // Change video every 8 seconds
+
+    return () => clearInterval(interval);
+  }, [videos.length]);
+
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
     console.error('Video failed to load:', e);
+    // Try next video on error
+    setCurrentVideoIndex((prevIndex) => 
+      prevIndex === videos.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   const handleVideoLoaded = () => {
-    console.log('Video loaded successfully');
+    console.log('Video loaded successfully:', videos[currentVideoIndex].title);
   };
 
   return (
@@ -17,20 +61,19 @@ const VideoHero = () => {
       {/* Video Background */}
       <div className="absolute inset-0">
         <video
+          key={currentVideoIndex}
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
+          className={`w-full h-full object-cover transition-opacity duration-500 ${
+            isTransitioning ? 'opacity-50' : 'opacity-100'
+          }`}
           onError={handleVideoError}
           onLoadedData={handleVideoLoaded}
         >
           <source
-            src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4"
-            type="video/mp4"
-          />
-          <source
-            src="https://videos.pexels.com/video-files/5524077/5524077-uhd_2560_1440_25fps.mp4"
+            src={videos[currentVideoIndex].src}
             type="video/mp4"
           />
           {/* Fallback image if video doesn't load */}
@@ -40,6 +83,22 @@ const VideoHero = () => {
             className="w-full h-full object-cover"
           />
         </video>
+
+        {/* Video indicators */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {videos.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentVideoIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentVideoIndex 
+                  ? 'bg-white scale-125' 
+                  : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+              }`}
+              aria-label={`Switch to video ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Dark overlay */}
@@ -62,7 +121,7 @@ const VideoHero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-2 border-white text-white hover:bg-white hover:text-primary bg-transparent px-8 py-3 text-lg flex items-center gap-2 transition-all duration-300"
+              className="border-2 border-white text-white hover:bg-white hover:text-primary bg-black bg-opacity-20 px-8 py-3 text-lg flex items-center gap-2 transition-all duration-300"
             >
               <Play size={20} fill="currentColor" />
               Video abspielen
