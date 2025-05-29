@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
+import VideoHero from '../components/VideoHero';
 import AboutUs from '../components/AboutUs';
 import Footer from '../components/Footer';
 import PropertyCard from '../components/PropertyCard';
@@ -10,27 +10,27 @@ import { Button } from "@/components/ui/button";
 const Index = () => {
   const properties = [
     {
-      title: "Moderne Penthouse-Wohnung mit Dachterrasse",
-      location: "Charlottenburg, Berlin",
-      price: "1.250.000 €",
-      size: "160 m²",
-      bedrooms: 4,
-      type: "Penthouse",
-      imageUrl: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      title: "Exklusive Villa mit Panoramablick",
+      location: "Grunewald, Berlin",
+      price: "3.850.000 €",
+      size: "450 m²",
+      bedrooms: 6,
+      type: "Villa",
+      imageUrl: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Sanierte Altbauwohnung mit Balkon",
-      location: "Prenzlauer Berg, Berlin",
-      price: "650.000 €",
-      size: "95 m²",
-      bedrooms: 3,
-      type: "Altbauwohnung",
-      imageUrl: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      title: "Luxuriöse Stadtvilla mit Garten",
+      location: "Dahlem, Berlin",
+      price: "2.950.000 €",
+      size: "380 m²",
+      bedrooms: 5,
+      type: "Stadtvilla",
+      imageUrl: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Lichtdurchflutete Maisonette-Wohnung",
       location: "Mitte, Berlin",
-      price: "980.000 €",
+      price: "1.480.000 €",
       size: "145 m²",
       bedrooms: 4,
       type: "Maisonette",
@@ -39,7 +39,7 @@ const Index = () => {
     {
       title: "Modernes Apartment im Stadtzentrum",
       location: "Kreuzberg, Berlin",
-      price: "450.000 €",
+      price: "850.000 €",
       size: "85 m²",
       bedrooms: 2,
       type: "Apartment",
@@ -48,7 +48,7 @@ const Index = () => {
     {
       title: "Geräumige Wohnung mit Stadtblick",
       location: "Friedrichshain, Berlin",
-      price: "720.000 €",
+      price: "1.120.000 €",
       size: "120 m²",
       bedrooms: 3,
       type: "Etagenwohnung",
@@ -57,7 +57,7 @@ const Index = () => {
     {
       title: "Elegante Stadtwohnung in historischem Gebäude",
       location: "Schöneberg, Berlin",
-      price: "890.000 €",
+      price: "1.290.000 €",
       size: "135 m²",
       bedrooms: 3,
       type: "Stadtwohnung",
@@ -69,12 +69,15 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        {/* Properties Section - Moved to top */}
+        {/* Video Hero Section */}
+        <VideoHero />
+
+        {/* Properties Section */}
         <section id="properties" className="py-20 bg-white">
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h6 className="text-primary font-medium mb-2">UNSERE IMMOBILIEN</h6>
-              <h2 className="text-4xl font-bold mb-6">Aktuelle Angebote</h2>
+              <h2 className="text-4xl font-bold mb-6">Exklusive Objekte</h2>
               <p className="text-lg text-gray-600">
                 Entdecken Sie unser exklusives Portfolio an hochwertigen Immobilien in den besten Lagen Berlins und Umgebung.
               </p>
@@ -100,7 +103,6 @@ const Index = () => {
           </div>
         </section>
 
-        <Hero />
         <AboutUs />
 
         {/* Services Section */}
