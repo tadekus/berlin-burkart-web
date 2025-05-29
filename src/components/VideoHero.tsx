@@ -6,24 +6,24 @@ import { Play } from 'lucide-react';
 const VideoHero = () => {
   const videos = [
     {
-      src: "https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4",
-      title: "Modern Luxury Living"
+      src: "https://videos.pexels.com/video-files/1571264/1571264-uhd_2560_1440_30fps.mp4",
+      title: "Luxury Living Room"
     },
     {
-      src: "https://videos.pexels.com/video-files/5524077/5524077-uhd_2560_1440_25fps.mp4", 
-      title: "Contemporary Design"
+      src: "https://videos.pexels.com/video-files/2098429/2098429-uhd_2560_1440_30fps.mp4", 
+      title: "Modern Kitchen Design"
     },
     {
-      src: "https://videos.pexels.com/video-files/6069112/6069112-uhd_2560_1440_30fps.mp4",
-      title: "Elegant Interiors"
+      src: "https://videos.pexels.com/video-files/6186237/6186237-uhd_2560_1440_25fps.mp4",
+      title: "Elegant Bedroom Suite"
     },
     {
-      src: "https://videos.pexels.com/video-files/8134179/8134179-uhd_2560_1440_25fps.mp4",
-      title: "Premium Architecture"
+      src: "https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4",
+      title: "Premium Apartment Interior"
     },
     {
-      src: "https://videos.pexels.com/video-files/7534553/7534553-uhd_2560_1440_25fps.mp4",
-      title: "Luxury Amenities"
+      src: "https://videos.pexels.com/video-files/4113260/4113260-uhd_2560_1440_25fps.mp4",
+      title: "Luxury Apartment Views"
     }
   ];
 
