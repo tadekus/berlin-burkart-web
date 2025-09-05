@@ -26,7 +26,7 @@ const AboutUs = () => {
       description: "Paul Mey ist verantwortlich für den Bereich Technologie und Innovation bei BURKERT&BURKART. Mit seiner Expertise in IT-Infrastruktur und Künstlicher Intelligenz unterstützt er Kunden bei der digitalen Transformation. Zuvor war er CTO bei einem führenden Berliner Technologieunternehmen. Er hat einen Master in Informatik von der TU Berlin.",
       email: "p.mey@burkertburkart.de",
       phone: "+49 30 123456-03",
-      imageUrl: "/lovable-uploads/48d5a893-2ba0-4edf-84c6-5c5d23be7b71.png"
+      imageUrl: "/lovable-uploads/4390e7f0-96cd-4a04-a0a0-295f187328e1.png"
     },
     {
       name: "Dr. Sophia Burkart",
