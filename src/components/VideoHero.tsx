@@ -44,7 +44,7 @@ const VideoHero = () => {
           prevIndex === videos.length - 1 ? 0 : prevIndex + 1
         );
         setIsTransitioning(false);
-      }, 1500);
+      }, 5000);
     }, 15000); // Change video every 15 seconds
 
     return () => clearInterval(interval);
@@ -74,7 +74,7 @@ const VideoHero = () => {
         <img
           src={videos[currentVideoIndex].poster || "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"}
           alt={videos[currentVideoIndex].title}
-          className={`w-full h-full object-cover transition-opacity duration-500 ${
+          className={`w-full h-full object-cover transition-all duration-[5000ms] animate-zoom-in ${
             isTransitioning ? 'opacity-50' : 'opacity-100'
           }`}
           loading="eager"
@@ -88,7 +88,7 @@ const VideoHero = () => {
           playsInline
           preload="metadata"
           poster={videos[currentVideoIndex].poster}
-          className={`w-full h-full object-cover transition-opacity duration-500 ${
+          className={`w-full h-full object-cover transition-all duration-[5000ms] animate-zoom-in ${
             isTransitioning || hasVideoError ? 'opacity-0' : 'opacity-100'
           }`}
           onError={handleVideoError}
