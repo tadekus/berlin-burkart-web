@@ -37,13 +37,14 @@ const VideoHero = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentVideoIndex((prevIndex) =>
-        prevIndex === videos.length - 1 ? 0 : prevIndex + 1
-      );
+      setCurrentVideoIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % videos.length;
+        return nextIndex;
+      });
     }, 4000); // Change image every 4 seconds
 
     return () => clearInterval(interval);
-  }, [videos.length]);
+  }, []); // No dependencies to prevent re-initialization
 
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
     console.error('Video failed to load:', e);
