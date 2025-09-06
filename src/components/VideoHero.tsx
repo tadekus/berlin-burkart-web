@@ -6,11 +6,6 @@ import { Play } from 'lucide-react';
 const VideoHero = () => {
   const videos = [
     {
-      src: "https://videos.pexels.com/video-files/2022395/2022395-uhd_2560_1440_30fps.mp4",
-      title: "Luxury Villa Exterior",
-      poster: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2000&auto=format&fit=crop"
-    },
-    {
       src: "https://videos.pexels.com/video-files/3581368/3581368-uhd_2560_1440_25fps.mp4", 
       title: "Premium Penthouse Interior",
       poster: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=2000&auto=format&fit=crop"
@@ -29,6 +24,11 @@ const VideoHero = () => {
       src: "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_25fps.mp4",
       title: "Exclusive Mansion Estate",
       poster: "https://images.unsplash.com/photo-1597047084897-51e81819a499?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      src: "https://videos.pexels.com/video-files/2022395/2022395-uhd_2560_1440_30fps.mp4",
+      title: "Luxury Villa Exterior",
+      poster: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2000&auto=format&fit=crop"
     }
   ];
 
@@ -44,8 +44,8 @@ const VideoHero = () => {
           prevIndex === videos.length - 1 ? 0 : prevIndex + 1
         );
         setIsTransitioning(false);
-      }, 3000); // 3 second transition
-    }, 600000); // Change video every 10 minutes
+      }, 800); // Shorter transition to avoid jumping
+    }, 4000); // Change video every 4 seconds
 
     return () => clearInterval(interval);
   }, [videos.length]);
@@ -75,7 +75,7 @@ const VideoHero = () => {
         <img
           src={videos[currentVideoIndex].poster || "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"}
           alt={videos[currentVideoIndex].title}
-          className={`w-full h-full object-cover transition-all duration-[3000ms] animate-zoom-in ${
+          className={`w-full h-full object-cover transition-all duration-[800ms] animate-zoom-in ${
             isTransitioning ? 'opacity-50' : 'opacity-100'
           }`}
           loading="eager"
@@ -89,7 +89,7 @@ const VideoHero = () => {
           playsInline
           preload="metadata"
           poster={videos[currentVideoIndex].poster}
-          className={`w-full h-full object-cover transition-all duration-[3000ms] animate-zoom-in ${
+          className={`w-full h-full object-cover transition-all duration-[800ms] animate-zoom-in ${
             isTransitioning || hasVideoError ? 'opacity-0' : 'opacity-100'
           }`}
           onError={handleVideoError}
