@@ -33,19 +33,14 @@ const VideoHero = () => {
   ];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
   const [hasVideoError, setHasVideoError] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentVideoIndex((prevIndex) => 
-          prevIndex === videos.length - 1 ? 0 : prevIndex + 1
-        );
-        setIsTransitioning(false);
-      }, 800); // Shorter transition to avoid jumping
-    }, 4000); // Change video every 4 seconds
+      setCurrentVideoIndex((prevIndex) =>
+        prevIndex === videos.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // Change image every 4 seconds (no crossfade)
 
     return () => clearInterval(interval);
   }, [videos.length]);
@@ -75,9 +70,7 @@ const VideoHero = () => {
         <img
           src={videos[currentVideoIndex].poster || "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"}
           alt={videos[currentVideoIndex].title}
-          className={`w-full h-full object-cover transition-all duration-[800ms] animate-zoom-in ${
-            isTransitioning ? 'opacity-50' : 'opacity-100'
-          }`}
+          className="w-full h-full object-cover animate-zoom-in opacity-100"
           loading="eager"
         />
         {/* Video overlay */}
@@ -89,9 +82,7 @@ const VideoHero = () => {
           playsInline
           preload="metadata"
           poster={videos[currentVideoIndex].poster}
-          className={`w-full h-full object-cover transition-all duration-[800ms] animate-zoom-in ${
-            isTransitioning || hasVideoError ? 'opacity-0' : 'opacity-100'
-          }`}
+          className={`w-full h-full object-cover animate-zoom-in ${hasVideoError ? 'opacity-0' : 'opacity-100'}`}
           onError={handleVideoError}
           onLoadedData={handleVideoLoaded}
         >
