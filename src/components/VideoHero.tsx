@@ -53,7 +53,7 @@ const VideoHero = () => {
         );
         setIsTransitioning(false);
       }, 1000); // 1 second crossfade
-    }, 4000); // Change image every 4 seconds
+    }, 12000); // Change image every 12 seconds
 
     return () => clearInterval(interval);
   }, [videos.length]);
