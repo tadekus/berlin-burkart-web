@@ -6,24 +6,24 @@ import { Play } from 'lucide-react';
 const VideoHero = () => {
   const videos = [
     {
-      src: "https://videos.pexels.com/video-files/1571264/1571264-uhd_2560_1440_30fps.mp4",
-      title: "Luxury Living Room"
+      src: "https://videos.pexels.com/video-files/2022395/2022395-uhd_2560_1440_30fps.mp4",
+      title: "Luxury Villa Exterior"
     },
     {
-      src: "https://videos.pexels.com/video-files/2098429/2098429-uhd_2560_1440_30fps.mp4", 
-      title: "Modern Kitchen Design"
+      src: "https://videos.pexels.com/video-files/3581368/3581368-uhd_2560_1440_25fps.mp4", 
+      title: "Premium Penthouse Interior"
     },
     {
-      src: "https://videos.pexels.com/video-files/6186237/6186237-uhd_2560_1440_25fps.mp4",
-      title: "Elegant Bedroom Suite"
+      src: "https://videos.pexels.com/video-files/3015494/3015494-uhd_2560_1440_30fps.mp4",
+      title: "Luxury Apartment Pool & Terrace"
     },
     {
-      src: "https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4",
-      title: "Premium Apartment Interior"
+      src: "https://videos.pexels.com/video-files/4022097/4022097-uhd_2560_1440_25fps.mp4",
+      title: "High-End Modern House"
     },
     {
-      src: "https://videos.pexels.com/video-files/4113260/4113260-uhd_2560_1440_25fps.mp4",
-      title: "Luxury Apartment Views"
+      src: "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_25fps.mp4",
+      title: "Exclusive Mansion Estate"
     }
   ];
 
