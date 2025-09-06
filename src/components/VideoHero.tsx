@@ -44,7 +44,7 @@ const VideoHero = () => {
           prevIndex === videos.length - 1 ? 0 : prevIndex + 1
         );
         setIsTransitioning(false);
-      }, 500);
+      }, 1500);
     }, 15000); // Change video every 15 seconds
 
     return () => clearInterval(interval);
