@@ -40,17 +40,23 @@ const VideoHero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIsTransitioning(true);
-      const nextIndex = currentVideoIndex === videos.length - 1 ? 0 : currentVideoIndex + 1;
-      setNextVideoIndex(nextIndex);
+      
+      setCurrentVideoIndex((prevIndex) => {
+        const nextIndex = prevIndex === videos.length - 1 ? 0 : prevIndex + 1;
+        setNextVideoIndex(nextIndex);
+        return prevIndex; // Keep current during transition
+      });
       
       setTimeout(() => {
-        setCurrentVideoIndex(nextIndex);
+        setCurrentVideoIndex((prevIndex) => 
+          prevIndex === videos.length - 1 ? 0 : prevIndex + 1
+        );
         setIsTransitioning(false);
       }, 1000); // 1 second crossfade
     }, 4000); // Change image every 4 seconds
 
     return () => clearInterval(interval);
-  }, [currentVideoIndex, videos.length]);
+  }, [videos.length]);
 
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
     console.error('Video failed to load:', e);
