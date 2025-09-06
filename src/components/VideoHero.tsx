@@ -45,7 +45,7 @@ const VideoHero = () => {
         );
         setIsTransitioning(false);
       }, 5000);
-    }, 15000); // Change video every 15 seconds
+    }, 30000); // Change video every 30 seconds
 
     return () => clearInterval(interval);
   }, [videos.length]);
