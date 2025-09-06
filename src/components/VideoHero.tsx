@@ -7,28 +7,34 @@ const VideoHero = () => {
   const videos = [
     {
       src: "https://videos.pexels.com/video-files/2022395/2022395-uhd_2560_1440_30fps.mp4",
-      title: "Luxury Villa Exterior"
+      title: "Luxury Villa Exterior",
+      poster: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2000&auto=format&fit=crop"
     },
     {
       src: "https://videos.pexels.com/video-files/3581368/3581368-uhd_2560_1440_25fps.mp4", 
-      title: "Premium Penthouse Interior"
+      title: "Premium Penthouse Interior",
+      poster: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=2000&auto=format&fit=crop"
     },
     {
       src: "https://videos.pexels.com/video-files/3015494/3015494-uhd_2560_1440_30fps.mp4",
-      title: "Luxury Apartment Pool & Terrace"
+      title: "Luxury Apartment Pool & Terrace",
+      poster: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=2000&auto=format&fit=crop"
     },
     {
       src: "https://videos.pexels.com/video-files/4022097/4022097-uhd_2560_1440_25fps.mp4",
-      title: "High-End Modern House"
+      title: "High-End Modern House",
+      poster: "https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=2000&auto=format&fit=crop"
     },
     {
       src: "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_25fps.mp4",
-      title: "Exclusive Mansion Estate"
+      title: "Exclusive Mansion Estate",
+      poster: "https://images.unsplash.com/photo-1597047084897-51e81819a499?q=80&w=2000&auto=format&fit=crop"
     }
   ];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [hasVideoError, setHasVideoError] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -46,13 +52,17 @@ const VideoHero = () => {
 
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
     console.error('Video failed to load:', e);
-    // Try next video on error
-    setCurrentVideoIndex((prevIndex) => 
-      prevIndex === videos.length - 1 ? 0 : prevIndex + 1
-    );
+    setHasVideoError(true);
+    // Try next video shortly on error
+    setTimeout(() => {
+      setCurrentVideoIndex((prevIndex) =>
+        prevIndex === videos.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 500);
   };
 
   const handleVideoLoaded = () => {
+    setHasVideoError(false);
     console.log('Video loaded successfully:', videos[currentVideoIndex].title);
   };
 
@@ -60,14 +70,26 @@ const VideoHero = () => {
     <div className="relative h-screen overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0">
+        {/* Always-visible image fallback */}
+        <img
+          src={videos[currentVideoIndex].poster || "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"}
+          alt={videos[currentVideoIndex].title}
+          className={`w-full h-full object-cover transition-opacity duration-500 ${
+            isTransitioning ? 'opacity-50' : 'opacity-100'
+          }`}
+          loading="eager"
+        />
+        {/* Video overlay */}
         <video
           key={currentVideoIndex}
           autoPlay
           muted
           loop
           playsInline
+          preload="metadata"
+          poster={videos[currentVideoIndex].poster}
           className={`w-full h-full object-cover transition-opacity duration-500 ${
-            isTransitioning ? 'opacity-50' : 'opacity-100'
+            isTransitioning || hasVideoError ? 'opacity-0' : 'opacity-100'
           }`}
           onError={handleVideoError}
           onLoadedData={handleVideoLoaded}
@@ -75,12 +97,6 @@ const VideoHero = () => {
           <source
             src={videos[currentVideoIndex].src}
             type="video/mp4"
-          />
-          {/* Fallback image if video doesn't load */}
-          <img
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-            alt="Luxury apartment interior"
-            className="w-full h-full object-cover"
           />
         </video>
 
