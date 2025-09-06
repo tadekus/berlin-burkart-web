@@ -52,10 +52,10 @@ const VideoHero = () => {
       {/* Video Background */}
       <div className="absolute inset-0">
         <img
-          key={currentVideoIndex} // Force re-render to restart animation
+          key={currentVideoIndex}
           src={videos[currentVideoIndex].poster || "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"}
           alt={videos[currentVideoIndex].title}
-          className="w-full h-full object-cover animate-zoom-continuous transition-opacity duration-500 ease-in-out"
+          className="w-full h-full object-cover animate-[zoom-continuous_4s_linear_forwards] will-change-transform"
           loading="eager"
         />
 
