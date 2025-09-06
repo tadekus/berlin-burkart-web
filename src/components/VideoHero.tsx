@@ -33,7 +33,7 @@ const VideoHero = () => {
   ];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  const [hasVideoError, setHasVideoError] = useState(false);
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -46,22 +46,6 @@ const VideoHero = () => {
     return () => clearInterval(interval);
   }, []); // No dependencies to prevent re-initialization
 
-  const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
-    console.error('Video failed to load:', e);
-    setHasVideoError(true);
-    // Wait much longer before trying next video on error
-    setTimeout(() => {
-      setCurrentVideoIndex((prevIndex) =>
-        prevIndex === videos.length - 1 ? 0 : prevIndex + 1
-      );
-      setHasVideoError(false);
-    }, 10000); // Wait 10 seconds on error
-  };
-
-  const handleVideoLoaded = () => {
-    setHasVideoError(false);
-    console.log('Video loaded successfully:', videos[currentVideoIndex].title);
-  };
 
   return (
     <div className="relative h-screen overflow-hidden">
@@ -73,23 +57,6 @@ const VideoHero = () => {
           className="w-full h-full object-cover"
           loading="eager"
         />
-        <video
-          key={currentVideoIndex}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster={videos[currentVideoIndex].poster}
-          className={`w-full h-full object-cover ${hasVideoError ? 'opacity-0' : 'opacity-100'}`}
-          onError={handleVideoError}
-          onLoadedData={handleVideoLoaded}
-        >
-          <source
-            src={videos[currentVideoIndex].src}
-            type="video/mp4"
-          />
-        </video>
 
         {/* Video indicators */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
