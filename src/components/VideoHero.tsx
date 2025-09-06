@@ -33,17 +33,24 @@ const VideoHero = () => {
   ];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [nextVideoIndex, setNextVideoIndex] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [hasVideoError, setHasVideoError] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentVideoIndex((prevIndex) =>
-        prevIndex === videos.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 4000); // Change image every 4 seconds (no crossfade)
+      setIsTransitioning(true);
+      const nextIndex = currentVideoIndex === videos.length - 1 ? 0 : currentVideoIndex + 1;
+      setNextVideoIndex(nextIndex);
+      
+      setTimeout(() => {
+        setCurrentVideoIndex(nextIndex);
+        setIsTransitioning(false);
+      }, 1000); // 1 second crossfade
+    }, 4000); // Change image every 4 seconds
 
     return () => clearInterval(interval);
-  }, [videos.length]);
+  }, [currentVideoIndex, videos.length]);
 
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
     console.error('Video failed to load:', e);
@@ -64,40 +71,71 @@ const VideoHero = () => {
 
   return (
     <div className="relative h-screen overflow-hidden">
-      {/* Video Background */}
+      {/* Video Background with Crossfade */}
       <div className="absolute inset-0">
-        {/* Always-visible image fallback */}
-        <img
-          src={videos[currentVideoIndex].poster || "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"}
-          alt={videos[currentVideoIndex].title}
-          className="w-full h-full object-cover animate-zoom-in opacity-100"
-          loading="eager"
-        />
-        {/* Video overlay */}
-        <video
-          key={currentVideoIndex}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster={videos[currentVideoIndex].poster}
-          className={`w-full h-full object-cover animate-zoom-in ${hasVideoError ? 'opacity-0' : 'opacity-100'}`}
-          onError={handleVideoError}
-          onLoadedData={handleVideoLoaded}
-        >
-          <source
-            src={videos[currentVideoIndex].src}
-            type="video/mp4"
+        {/* Current layer */}
+        <div className={`absolute inset-0 transition-opacity duration-1000 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+          <img
+            src={videos[currentVideoIndex].poster || "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"}
+            alt={videos[currentVideoIndex].title}
+            className="w-full h-full object-cover animate-zoom-in"
+            loading="eager"
           />
-        </video>
+          <video
+            key={`current-${currentVideoIndex}`}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={videos[currentVideoIndex].poster}
+            className={`absolute inset-0 w-full h-full object-cover animate-zoom-in ${hasVideoError ? 'opacity-0' : 'opacity-100'}`}
+            onError={handleVideoError}
+            onLoadedData={handleVideoLoaded}
+          >
+            <source
+              src={videos[currentVideoIndex].src}
+              type="video/mp4"
+            />
+          </video>
+        </div>
+
+        {/* Next layer for crossfade */}
+        {isTransitioning && (
+          <div className="absolute inset-0 transition-opacity duration-1000 opacity-100">
+            <img
+              src={videos[nextVideoIndex].poster || "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"}
+              alt={videos[nextVideoIndex].title}
+              className="w-full h-full object-cover animate-zoom-in"
+              loading="eager"
+            />
+            <video
+              key={`next-${nextVideoIndex}`}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster={videos[nextVideoIndex].poster}
+              className="absolute inset-0 w-full h-full object-cover animate-zoom-in opacity-100"
+            >
+              <source
+                src={videos[nextVideoIndex].src}
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        )}
 
         {/* Video indicators */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
           {videos.map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentVideoIndex(index)}
+              onClick={() => {
+                setCurrentVideoIndex(index);
+                setIsTransitioning(false);
+              }}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentVideoIndex 
                   ? 'bg-white scale-125' 
