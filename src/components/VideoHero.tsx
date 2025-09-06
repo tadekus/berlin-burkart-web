@@ -44,8 +44,8 @@ const VideoHero = () => {
           prevIndex === videos.length - 1 ? 0 : prevIndex + 1
         );
         setIsTransitioning(false);
-      }, 30000);
-    }, 300000); // Change video every 5 minutes
+      }, 3000); // 3 second transition
+    }, 600000); // Change video every 10 minutes
 
     return () => clearInterval(interval);
   }, [videos.length]);
@@ -53,12 +53,13 @@ const VideoHero = () => {
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
     console.error('Video failed to load:', e);
     setHasVideoError(true);
-    // Try next video shortly on error
+    // Wait much longer before trying next video on error
     setTimeout(() => {
       setCurrentVideoIndex((prevIndex) =>
         prevIndex === videos.length - 1 ? 0 : prevIndex + 1
       );
-    }, 500);
+      setHasVideoError(false);
+    }, 10000); // Wait 10 seconds on error
   };
 
   const handleVideoLoaded = () => {
@@ -74,7 +75,7 @@ const VideoHero = () => {
         <img
           src={videos[currentVideoIndex].poster || "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"}
           alt={videos[currentVideoIndex].title}
-          className={`w-full h-full object-cover transition-all duration-[30000ms] animate-zoom-in ${
+          className={`w-full h-full object-cover transition-all duration-[3000ms] animate-zoom-in ${
             isTransitioning ? 'opacity-50' : 'opacity-100'
           }`}
           loading="eager"
@@ -88,7 +89,7 @@ const VideoHero = () => {
           playsInline
           preload="metadata"
           poster={videos[currentVideoIndex].poster}
-          className={`w-full h-full object-cover transition-all duration-[30000ms] animate-zoom-in ${
+          className={`w-full h-full object-cover transition-all duration-[3000ms] animate-zoom-in ${
             isTransitioning || hasVideoError ? 'opacity-0' : 'opacity-100'
           }`}
           onError={handleVideoError}
