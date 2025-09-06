@@ -18,7 +18,9 @@ const Navbar = () => {
           <a href="#" className="font-medium text-gray-800 hover:text-primary transition-colors">Home</a>
           <a href="#about" className="font-medium text-gray-800 hover:text-primary transition-colors">Über uns</a>
           <a href="#services" className="font-medium text-gray-800 hover:text-primary transition-colors">Dienstleistungen</a>
-          <Button className="bg-primary text-white hover:bg-secondary transition-colors">Kontakt</Button>
+          <a href="#about">
+            <Button className="bg-primary text-white hover:bg-secondary transition-colors">Kontakt</Button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -49,7 +51,9 @@ const Navbar = () => {
           <a href="#" className="font-medium text-gray-800 hover:text-primary transition-colors">Home</a>
           <a href="#about" className="font-medium text-gray-800 hover:text-primary transition-colors">Über uns</a>
           <a href="#services" className="font-medium text-gray-800 hover:text-primary transition-colors">Dienstleistungen</a>
-          <Button className="bg-primary text-white hover:bg-secondary transition-colors">Kontakt</Button>
+          <a href="#about">
+            <Button className="bg-primary text-white hover:bg-secondary transition-colors">Kontakt</Button>
+          </a>
         </div>
       </div>
     </nav>
