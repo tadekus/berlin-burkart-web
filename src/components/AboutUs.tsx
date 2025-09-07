@@ -8,14 +8,14 @@ const AboutUs = () => {
       name: "Dr. Maximilian Burkert",
       position: "Geschäftsführender Partner",
       email: "m.burkert@burkertburkart.de",
-      phone: "+49 30 123456-01",
+      phone: "+49 8902 246824-1",
       imageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
       name: "Julia Burkart",
       position: "Managing Director",
       email: "j.burkart@burkertburkart.de",
-      phone: "+49 30 123456-02",
+      phone: "+49 8902 246824-2",
       imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
