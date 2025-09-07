@@ -5,7 +5,6 @@ import { Mail, Phone } from 'lucide-react';
 interface TeamMemberProps {
   name: string;
   position: string;
-  description: string;
   email: string;
   phone: string;
   linkedIn?: string; // We'll keep this in the interface for backward compatibility
@@ -15,32 +14,30 @@ interface TeamMemberProps {
 const TeamMember: React.FC<TeamMemberProps> = ({ 
   name, 
   position, 
-  description, 
   email, 
   phone,
   imageUrl 
 }) => {
   return (
-    <div className="flex flex-col lg:flex-row gap-6 p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow">
-      <div className="lg:w-1/3 flex-shrink-0">
+    <div className="flex flex-col sm:flex-row gap-4 p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow">
+      <div className="flex-shrink-0">
         <img 
           src={imageUrl} 
           alt={name} 
-          className="w-full h-64 lg:h-auto object-cover rounded-md"
+          className="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-md mx-auto sm:mx-0"
         />
       </div>
-      <div className="lg:w-2/3">
-        <h3 className="text-2xl font-bold mb-2">{name}</h3>
-        <p className="text-primary font-semibold mb-4">{position}</p>
-        <p className="text-gray-600 mb-6">{description}</p>
+      <div className="flex-1 text-center sm:text-left">
+        <h3 className="text-xl font-bold mb-1">{name}</h3>
+        <p className="text-primary font-semibold mb-3">{position}</p>
         <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-2">
-            <Mail size={18} className="text-primary" />
-            <a href={`mailto:${email}`} className="text-gray-700 hover:text-primary">{email}</a>
+          <div className="flex items-center gap-2 justify-center sm:justify-start">
+            <Mail size={16} className="text-primary" />
+            <a href={`mailto:${email}`} className="text-gray-700 hover:text-primary text-sm">{email}</a>
           </div>
-          <div className="flex items-center gap-2">
-            <Phone size={18} className="text-primary" />
-            <a href={`tel:${phone}`} className="text-gray-700 hover:text-primary">{phone}</a>
+          <div className="flex items-center gap-2 justify-center sm:justify-start">
+            <Phone size={16} className="text-primary" />
+            <a href={`tel:${phone}`} className="text-gray-700 hover:text-primary text-sm">{phone}</a>
           </div>
         </div>
       </div>
