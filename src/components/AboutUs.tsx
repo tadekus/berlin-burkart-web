@@ -20,9 +20,9 @@ const AboutUs = () => {
     },
     {
       name: "Paul Mey",
-      position: "Partner, Technologie",
+      position: "Real Estate Agent",
       email: "p.mey@burkertburkart.de",
-      phone: "+49 30 123456-03",
+      phone: "+49 8902 246824-3",
       imageUrl: "/lovable-uploads/4390e7f0-96cd-4a04-a0a0-295f187328e1.png"
     },
     {
