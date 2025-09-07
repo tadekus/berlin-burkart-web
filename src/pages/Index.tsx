@@ -11,7 +11,6 @@ const Index = () => {
   const properties = [
     {
       title: "Exklusive Villa mit Panoramablick",
-      location: "Grunewald, Berlin",
       price: "3.850.000 €",
       size: "450 m²",
       bedrooms: 6,
@@ -20,7 +19,6 @@ const Index = () => {
     },
     {
       title: "Luxuriöse Stadtvilla mit Garten",
-      location: "Dahlem, Berlin",
       price: "2.950.000 €",
       size: "380 m²",
       bedrooms: 5,
@@ -29,7 +27,6 @@ const Index = () => {
     },
     {
       title: "Lichtdurchflutete Maisonette-Wohnung",
-      location: "Mitte, Berlin",
       price: "1.480.000 €",
       size: "145 m²",
       bedrooms: 4,
@@ -38,7 +35,6 @@ const Index = () => {
     },
     {
       title: "Modernes Apartment im Stadtzentrum",
-      location: "Kreuzberg, Berlin",
       price: "850.000 €",
       size: "85 m²",
       bedrooms: 2,
@@ -47,7 +43,6 @@ const Index = () => {
     },
     {
       title: "Geräumige Wohnung mit Stadtblick",
-      location: "Friedrichshain, Berlin",
       price: "1.120.000 €",
       size: "120 m²",
       bedrooms: 3,
@@ -56,7 +51,6 @@ const Index = () => {
     },
     {
       title: "Elegante Stadtwohnung in historischem Gebäude",
-      location: "Schöneberg, Berlin",
       price: "1.290.000 €",
       size: "135 m²",
       bedrooms: 3,

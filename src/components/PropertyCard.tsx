@@ -1,12 +1,11 @@
 
 import React from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MapPin, Euro, Home, Maximize2, Bed } from 'lucide-react';
+import { Euro, Home, Maximize2, Bed } from 'lucide-react';
 
 interface PropertyCardProps {
   title: string;
-  location: string;
   price: string;
   size: string;
   bedrooms: number;
@@ -16,7 +15,6 @@ interface PropertyCardProps {
 
 const PropertyCard: React.FC<PropertyCardProps> = ({
   title,
-  location,
   price,
   size,
   bedrooms,
@@ -34,10 +32,6 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
       </div>
       <CardHeader>
         <CardTitle className="line-clamp-1">{title}</CardTitle>
-        <CardDescription className="flex items-center gap-1">
-          <MapPin size={16} className="text-primary" />
-          {location}
-        </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-3 gap-4 text-sm">
