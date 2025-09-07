@@ -86,7 +86,7 @@ const VideoHero = () => {
             Exklusive <span className="text-gradient-white">Immobilien</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 animate-fade-in" style={{animationDelay: '0.2s'}}>
-            Entdecken Sie außergewöhnliche Wohnträume in den prestigeträchtigsten Lagen Berlins
+            Entdecken Sie außergewöhnliche Wohnträume in den prestigeträchtigsten Lagen
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{animationDelay: '0.4s'}}>
