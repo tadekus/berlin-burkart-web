@@ -45,7 +45,7 @@ const AboutUs = () => {
           <h6 className="text-primary font-medium mb-2">UNSER TEAM</h6>
           <h2 className="text-4xl font-bold mb-6">Lernen Sie uns kennen</h2>
           <p className="text-lg text-gray-600">
-            Unser erfahrenes Team aus Fachexperten steht Ihnen mit umfassendem Know-how und langjähriger Berufserfahrung zur Seite. Wir verbinden Kompetenz mit persönlichem Engagement für Ihren Erfolg.
+            Unser erfahrenes Team steht Ihnen mit umfassendem Know-how und langjähriger Berufserfahrung zur Seite. Wir verbinden Kompetenz mit persönlichem Engagement für Ihre Traum-Immobilie.
           </p>
         </div>
 
