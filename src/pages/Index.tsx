@@ -79,7 +79,7 @@ const Index = () => {
               <h6 className="text-primary font-medium mb-2">UNSERE IMMOBILIEN</h6>
               <h2 className="text-4xl font-bold mb-6">Exklusive Objekte</h2>
               <p className="text-lg text-gray-600">
-                Entdecken Sie unser exklusives Portfolio an hochwertigen Immobilien in den besten Lagen Berlins und Umgebung.
+                Entdecken Sie unser exklusives Portfolio an hochwertigen Immobilien in den besten Lagen.
               </p>
             </div>
             
