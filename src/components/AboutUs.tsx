@@ -26,10 +26,10 @@ const AboutUs = () => {
       imageUrl: "/lovable-uploads/4390e7f0-96cd-4a04-a0a0-295f187328e1.png"
     },
     {
-      name: "Dr. Sophia Burkart",
-      position: "Leiterin Nachhaltigkeit",
-      email: "s.burkart@burkertburkart.de",
-      phone: "+49 30 123456-04",
+      name: "Sophia Hechinger",
+      position: "Real Estate Agent",
+      email: "s.hechinger@burkertburkart.de",
+      phone: "+49 8902 246824-4",
       imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     }
   ];
