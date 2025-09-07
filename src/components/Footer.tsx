@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 font-serif">BURKERT&BURKART</h3>
             <p className="text-gray-300 mb-4">
-              Innovative Beratungslösungen für Unternehmen in Deutschland und Europa. Wir begleiten Sie auf Ihrem Weg zum Erfolg.
+              Wir verbinden Kompetenz mit persönlichem Engagement für Ihre Traum-Immobilie.
             </p>
           </div>
           
@@ -27,12 +27,7 @@ const Footer = () => {
                 <span className="mr-2">
                   <Phone size={18} />
                 </span>
-                <a href="tel:+4930123456" className="text-gray-300 hover:text-white">+49 30 123456-00</a>
-              </p>
-              <p className="pt-2">
-                Kurfürstendamm 123<br />
-                10719 Berlin<br />
-                Deutschland
+                <a href="tel:+4989024682840" className="text-gray-300 hover:text-white">+49 8902 246824-0</a>
               </p>
             </div>
           </div>
