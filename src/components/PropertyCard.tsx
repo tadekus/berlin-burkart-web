@@ -31,7 +31,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
         />
       </div>
       <CardHeader>
-        <CardTitle className="line-clamp-1">{title}</CardTitle>
+        <CardTitle className="">{title}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-3 gap-4 text-sm">
