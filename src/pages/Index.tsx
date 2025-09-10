@@ -11,7 +11,7 @@ const Index = () => {
   const properties = [
     {
       title: "Exklusive Villa mit Panoramablick",
-      price: "3.850.000 €",
+      price: "3.850.000",
       size: "450 m²",
       bedrooms: 6,
       type: "Villa",
@@ -19,7 +19,7 @@ const Index = () => {
     },
     {
       title: "Luxuriöse Stadtvilla mit Garten",
-      price: "2.950.000 €",
+      price: "2.950.000",
       size: "380 m²",
       bedrooms: 5,
       type: "Stadtvilla",
@@ -27,7 +27,7 @@ const Index = () => {
     },
     {
       title: "Lichtdurchflutete Maisonette-Wohnung",
-      price: "1.480.000 €",
+      price: "1.480.000",
       size: "145 m²",
       bedrooms: 4,
       type: "Maisonette",
@@ -35,7 +35,7 @@ const Index = () => {
     },
     {
       title: "Modernes Apartment im Stadtzentrum",
-      price: "850.000 €",
+      price: "850.000",
       size: "85 m²",
       bedrooms: 2,
       type: "Apartment",
@@ -43,7 +43,7 @@ const Index = () => {
     },
     {
       title: "Geräumige Wohnung mit Stadtblick",
-      price: "1.120.000 €",
+      price: "1.120.000",
       size: "120 m²",
       bedrooms: 3,
       type: "Etagenwohnung",
@@ -51,7 +51,7 @@ const Index = () => {
     },
     {
       title: "Elegante Stadtwohnung in historischem Gebäude",
-      price: "1.290.000 €",
+      price: "1.290.000",
       size: "135 m²",
       bedrooms: 3,
       type: "Stadtwohnung",
