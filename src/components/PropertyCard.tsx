@@ -36,7 +36,6 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
       <CardContent>
         <div className="grid grid-cols-3 gap-4 text-sm">
           <div className="flex items-center gap-1">
-            <Euro size={16} className="text-primary" />
             <span>{price}</span>
           </div>
           <div className="flex items-center gap-1">
