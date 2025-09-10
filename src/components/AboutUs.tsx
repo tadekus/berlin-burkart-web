@@ -42,7 +42,7 @@ const AboutUs = () => {
       position: "Sekretärin",
       email: "s.könig@burkertburkart.de",
       phone: "+49 8902 246824-0",
-      imageUrl: sophiaKoenigImage,
+      imageUrl: "/lovable-uploads/eb855769-eabd-4b5c-b06a-281ea1f40635.png",
       imagePosition: "center 30%"
     }
   ];
