@@ -18,7 +18,7 @@ const AboutUs = () => {
       email: "j.burkart@burkertburkart.de",
       phone: "+49 8902 246824-2",
       imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      imagePosition: "top center"
+      imagePosition: "center 30%"
     },
     {
       name: "Paul Mey",
@@ -26,7 +26,7 @@ const AboutUs = () => {
       email: "p.mey@burkertburkart.de",
       phone: "+49 8902 246824-3",
       imageUrl: "/lovable-uploads/4390e7f0-96cd-4a04-a0a0-295f187328e1.png",
-      imagePosition: "top center"
+      imagePosition: "center 30%"
     },
     {
       name: "Sophia Hechinger",
