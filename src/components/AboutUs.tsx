@@ -30,16 +30,8 @@ const AboutUs = () => {
       imagePosition: "center 30%"
     },
     {
-      name: "Sophia Hechinger",
-      position: "Real Estate Agent",
-      email: "s.hechinger@burkertburkart.de",
-      phone: "+49 8902 246824-4",
-      imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      imagePosition: "center 30%"
-    },
-    {
       name: "Sophia König",
-      position: "Sekretärin",
+      position: "Office Management",
       email: "s.könig@burkertburkart.de",
       phone: "+49 8902 246824-0",
       imageUrl: "/lovable-uploads/eb855769-eabd-4b5c-b06a-281ea1f40635.png",
