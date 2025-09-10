@@ -43,8 +43,8 @@ const Index = () => {
       imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       location: "München Maxvorstadt",
       yearBuilt: "2018",
-      description: "Außergewöhnliche Maisonette-Wohnung mit bodentiefen Fenstern und hohen Decken. Die lichtdurchfluteten Räume schaffen eine einzigartige Wohnatmosphäre.",
-      features: ["Balkon", "Einbauküche", "Fußbodenheizung", "Aufzug", "Tiefgarage"]
+      description: "Moderne Design-Villa mit großzügigen Glasfronten und klarer Architektur. Die lichtdurchfluteten Räume, kombiniert mit hochwertiger Ausstattung und einem privaten Pool, schaffen ein einzigartiges Wohnambiente.",
+      features: ["Großzügige Terrasse", "Privater Pool", "Offene Einbauküche", "Fußbodenheizung", "Dachterrasse", "Carport / Garage"]
     },
     {
       title: "Modernes Apartment im Stadtzentrum",
