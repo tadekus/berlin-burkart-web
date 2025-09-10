@@ -1,6 +1,7 @@
 
 import React from 'react';
 import TeamMember from './TeamMember';
+import sophiaKoenigImage from '../assets/sophia-koenig.jpg';
 
 const AboutUs = () => {
   const team = [
@@ -33,7 +34,16 @@ const AboutUs = () => {
       position: "Real Estate Agent",
       email: "s.hechinger@burkertburkart.de",
       phone: "+49 8902 246824-4",
-      imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      imagePosition: "center 30%"
+    },
+    {
+      name: "Sophia König",
+      position: "Sekretärin",
+      email: "s.könig@burkertburkart.de",
+      phone: "+49 8902 246824-0",
+      imageUrl: sophiaKoenigImage,
+      imagePosition: "center 30%"
     }
   ];
 
