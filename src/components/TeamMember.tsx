@@ -26,7 +26,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
         <img 
           src={imageUrl} 
           alt={name} 
-          className="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-md mx-auto sm:mx-0"
+          className="w-48 h-48 sm:w-64 sm:h-64 object-cover rounded-md mx-auto sm:mx-0"
           style={{ objectPosition: imagePosition }}
         />
       </div>
