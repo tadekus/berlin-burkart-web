@@ -9,6 +9,7 @@ interface TeamMemberProps {
   phone: string;
   linkedIn?: string; // We'll keep this in the interface for backward compatibility
   imageUrl: string;
+  imagePosition?: string; // For customizing object-position
 }
 
 const TeamMember: React.FC<TeamMemberProps> = ({ 
@@ -16,7 +17,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   position, 
   email, 
   phone,
-  imageUrl 
+  imageUrl,
+  imagePosition = "center" 
 }) => {
   return (
     <div className="flex flex-col sm:flex-row gap-4 p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow">
@@ -25,6 +27,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
           src={imageUrl} 
           alt={name} 
           className="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-md mx-auto sm:mx-0"
+          style={{ objectPosition: imagePosition }}
         />
       </div>
       <div className="flex-1 text-center sm:text-left">
