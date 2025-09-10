@@ -35,11 +35,11 @@ const Index = () => {
       features: ["Garten", "Garage", "Fußbodenheizung", "Einbauküche", "Kaminanschluss", "Terrasse"]
     },
     {
-      title: "Lichtdurchflutete Maisonette-Wohnung",
+      title: "Moderne Design-Villa mit Pool und großen Glasfronten",
       price: "1.480.000",
       size: "145 m²",
       bedrooms: 4,
-      type: "Maisonette",
+      type: "Design-Villa",
       imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       location: "München Maxvorstadt",
       yearBuilt: "2018",
