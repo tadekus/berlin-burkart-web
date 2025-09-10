@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Euro, Home, Maximize2, Bed, MapPin, Calendar, Phone, Mail } from 'lucide-react';
+import { Euro, Home, Maximize2, Bed, Calendar, Phone, Mail } from 'lucide-react';
 
 interface PropertyDetailModalProps {
   isOpen: boolean;
@@ -68,12 +68,6 @@ const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                 </div>
               </div>
               
-              {property.location && (
-                <div className="flex items-center gap-2">
-                  <MapPin size={18} className="text-primary" />
-                  <span className="text-sm">{property.location}</span>
-                </div>
-              )}
               
               {property.yearBuilt && (
                 <div className="flex items-center gap-2">
