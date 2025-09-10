@@ -10,7 +10,7 @@ const AboutUs = () => {
       email: "m.burkert@burkertburkart.de",
       phone: "+49 8902 246824-1",
       imageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      imagePosition: "center bottom"
+      imagePosition: "top center"
     },
     {
       name: "Julia Burkart",
